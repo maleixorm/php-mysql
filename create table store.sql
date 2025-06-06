@@ -10,3 +10,10 @@ create table tb_descricoes_tecnicas (
     descricao_tecnica text not null,
     foreign key (id_produto) references tb_produtos (id_produto)
 );
+
+create table tb_imagens (
+	id_imagem int not null primary key auto_increment,
+    id_produto int not null,
+    url_imagem varchar(200) not null,
+    foreign key (id_produto) references tb_produtos (id_produto)
+);
