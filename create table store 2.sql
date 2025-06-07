@@ -8,12 +8,12 @@ CREATE TABLE tb_pedidos(
 	id_pedido INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     id_cliente INT NOT NULL,
     data_hora DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (id_cliente) REFERENCES tb_clientes(id_cliente)
+    FOREIGN KEY (id_cliente) REFERENCES tb_clientes (id_cliente)
 );
 
 CREATE TABLE tb_pedidos_produtos(
 	id_pedido INT NOT NULL,
     id_produto INT NOT NULL,
-    FOREIGN KEY(id_pedido) REFERENCES tb_pedidos(id_pedido),
-    FOREIGN KEY(id_produto) REFERENCES tb_produtos(id_produto)
+    FOREIGN KEY (id_pedido) REFERENCES tb_pedidos (id_pedido),
+    FOREIGN KEY (id_produto) REFERENCES tb_produtos (id_produto)
 );
