@@ -7,7 +7,7 @@ try {
     $conexao = new PDO($dsn, $user, $pass);
     $query = 'Select * from tb_usuarios;';
     $stmt = $conexao->query($query);
-    $listagem = $stmt->fetchAll();
+    $listagem = $stmt->fetchAll(PDO::FETCH_OBJ);
     echo '<pre>';
     print_r($listagem);
     echo '</pre>';
