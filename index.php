@@ -1,17 +1,18 @@
 <?php
-$dsn = 'mysql:host=localhost;dbname=php_com_pdo';
-$user = 'php';
-$pass = 123456;
+require_once "conexao.php";
 
 try {
     $conexao = new PDO($dsn, $user, $pass);
-    $query = "SELECT * FROM tb_usuarios ORDER BY nome DESC LIMIT 1;";
+    $query = "SELECT * FROM tb_usuarios;";
     $stmt = $conexao->query($query);
-    $listagem = $stmt->fetch(PDO::FETCH_OBJ);
-    echo '<pre>';
-    print_r($listagem);
-    echo '</pre>';
-    echo $listagem->nome;
+    $listagem = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    // echo '<pre>';
+    // print_r($listagem);
+    // echo '</pre>';
+    foreach ($listagem as $key => $value) {
+        print_r($value);
+        echo '<hr>';
+    }
 } catch (PDOException $e) {
     echo 'Erro: ' . $e->getCode() . ' - Mensagem: ' . $e->getMessage(); 
 }
