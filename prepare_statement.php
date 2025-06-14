@@ -37,7 +37,7 @@ if (!empty($_POST['user']) && !empty($_POST['pass'])) {
     <title>Login</title>
 </head>
 <body>
-    <form action="sqlinjection.php" method="post">
+    <form action="prepare_statement.php" method="post">
         <label for="user">Usuário: </label>
         <input type="text" name="user" id="user" placeholder="Usuário">
         <br><br>    
